@@ -8,6 +8,7 @@ on:
 
 jobs:
   analysis:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     steps:
@@ -29,4 +30,4 @@ jobs:
         APPID: ${{ secrets.APPID }}
         APPKEY: ${{ secrets.APPKEY }}
         TEAMID: ${{ secrets.TEAMID }}
-      run: python -m xdclient -i $APPID -k $APPKEY -t $TEAMID -m True
+      run: python -m xdclient -i $APPID -k $APPKEY -t $TEAMID -m True -f True
